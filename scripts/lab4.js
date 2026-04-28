@@ -27,13 +27,17 @@ function sumValues(num1, num2, add) {
 function discountPrices(prices, discount) {
     let discounted = [];
     let length = prices.length;
-    for(let i = 0; i < length; i++) {
-        let discountedPrice = 0
-        discountedPrice += prices[i] * (1 - discount);
-        discounted.push(discountedPrice);
+    if (prices.length != 0) {
+
+        for(let i = 0; i < length; i++) {
+            let discountedPrice = 0
+            discountedPrice += prices[i] * (1 - discount);
+            discounted.push(discountedPrice);
+        }
+        return discounted;
     }
 
-    return discounted;
+    return false;
 }
 
 module.exports = {sumValues, discountPrices};
